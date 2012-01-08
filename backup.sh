@@ -2,7 +2,6 @@
 
 #!/bin/bash
 datet=`date +%Y-%m-%d`;
-director=`date +%Y-%m-%d-*`;
 directory_source=/home/berkas1/ms;  #source directory - the directory where is your server
 last_backup=`ls | grep "$director" | tail -1`;
 
