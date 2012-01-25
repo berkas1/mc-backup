@@ -1,5 +1,11 @@
-#DO NOT USE THIS SCRIPT, IT IS NOT WORKING YET - FOR NOW JUST USE THE "simple.backup.sh"
-
+#Better version of script - this vs has been developed with ability to take more than one backup per day
+#You can simple use a scheduled job - cron to backup your server in periodic time
+#HOW TO USE THIS SCRIPT:
+#1. Simply place this file to the target directory (where the backups will be stored) 
+#3. Edit the "directory_source" variable
+#2. Run the script (./backup.sh) or define it as a scheduled cron job
+#HOW IT WORKS
+#Script creates backup diresctories with variable name by pattern "year-month-day-numberofbackup"
 #!/bin/bash
 datet=`date +%Y-%m-%d`;
 directory_source=/home/berkas1/ms;  #source directory - the directory where is your server
