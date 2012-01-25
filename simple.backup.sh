@@ -1,3 +1,7 @@
+#This is light version of script - for one backup per day only. If
+#you wish to take more backup per day, use the backup.sh script.
+
+
 directory_new=`date +%Y-%m-%d`;
 directory_source=/home/berkas1/ms  #source directory - the directory where is your server
 
