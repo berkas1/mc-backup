@@ -5,7 +5,7 @@
 #3. Edit the "directory_source" variable
 #2. Run the script (./backup.sh) or define it as a scheduled cron job
 #HOW IT WORKS
-#Script creates backup diresctories with variable name by pattern "year-month-day-numberofbackup"
+#Script creates backup directories with variable name by pattern "year-month-day-numberofbackup"
 #!/bin/bash
 datet=`date +%Y-%m-%d`;
 directory_source=/home/berkas1/ms;  #source directory - the directory where is your server
