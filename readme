@@ -1,7 +1,13 @@
-This is my backup script for my minecraft server.
+Simple way to take backup of your minecraft server.
 
-Use it at your own risk!
+HOW TO USE THIS SCRIPT:
+1. Simply place file backup.sh to the target directory (where the backups will be stored) 
+3. Edit the "directory_source" variable
+2. Run the script (./backup.sh) or define it as a scheduled cron job
 
+
+INFO:
+Script creates backup diresctories with variable name by pattern "year-month-day-numberofbackup"
 
 
 
