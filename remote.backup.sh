@@ -1,28 +1,38 @@
 #!/bin/sh
 
 #editable section
-ftp_host=mlocal;
-ftp_user=f;
-ftp_pass=f;
-ftp_backup_source=;
-ftp_backup_dest=;
+ftp_host=
+ftp_user=
+ftp_pass=
+ftp_backup_source=
+ftp_backup_dest=
+disable_ping=0
 
 #end of editable section
 
+
+#make sure that ftp server is online and responding
+
+if [ $disable_ping -eq 1 ];then
+	echo "Continuing without ping"
+else
+	ping -c 2 $ftp_host > /dev/null
+	if [ $? -eq 0 ];then
+		echo "FTP server responding, making backup..."
+	else
+		echo "server not responding, exiting..."
+		exit 0
+	fi
+fi
+
+
 #make a connection to remote ftp server
-ftp -in $ftp_host;
+wget -rq   ftp://$ftp_user:$ftp_pass'@'$ftp_host/$ftp_backup_source --reject lck
 
 
-#log into ftp server
-user $ftp_user $ftp_pass;
 
 
-#get desired files and save them in your local computer
-get $ftp_backup_source $ftp_backup_dest;
 
-
-#end ftp connection
-bye;
 
 
 if [ $? -eq 0]; then
